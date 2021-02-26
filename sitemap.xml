@@ -1,13 +1,30 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
-    <loc>https://hanzidict.github.io/</loc>
+    <loc>https://sp4ee.github.io/build-log/</loc>
   </url>
-  
+
   <url>
-    <loc>https://hanzidict.github.io/other/</loc>
+    <loc>https://sp4ee.github.io/</loc>
   </url>
-  
+
+  <url>
+    <loc>https://sp4ee.github.io/build-log/bricked-attiny/</loc>
+  </url>
+
+  <url>
+    <loc>https://sp4ee.github.io/build-log/working-brushless-motor-prototype/</loc>
+  </url>
+
+  <url>
+    <loc>https://sp4ee.github.io/build-log/motion-smarts-solar-engine/</loc>
+  </url>
+
+  <url>
+    <loc>https://sp4ee.github.io/build-log/fell-in-love-with-pummers/</loc>
+  </url>
+
+
+
 </urlset>

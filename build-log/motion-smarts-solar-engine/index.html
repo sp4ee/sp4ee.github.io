@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  
+  <meta property="og:image" content="https://sp4ee.github.io/images/zen-share.png" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+    
+  <title>Motion and smarts | Solarpunk Forever Engine</title>
+  <meta property="og:title" content="Motion and smarts | Solarpunk Forever Engine" />
+  
+  <meta name="description" content="Such camera angle, many gradient, so gorgeous.">
+  <meta name="keywords" content='' />
+  <meta property="og:description" content="Such camera angle, many gradient, so gorgeous." />
+  <meta property="og:url" content="https://sp4ee.github.io/motion-smarts-solar-engine" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?1614373344" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?1614373344" />
+  <link rel="stylesheet" href="/bundle.css?1614373344" />
+</head>
+
+<body>
+
+
+<article class="main single">
+  <nav class="above-title"><a href="https://sp4ee.github.io/">Solarpunk Forever Engine</a> »</nav>
+  <h1>Motion and smarts</h1>
+  <p class="pagemeta">October 17, 2020</p>
+  <p>Learning about pummers awakened my building instinct, but it turns out the desire goes a bit deeper this time. A blinking light is, well, a blinking light, but it&rsquo;s somehow very &ndash; abstract? immaterial? The non-sitters in the BEAM menagerie get their twitchy motion from tiny motors soldered in weird ways, and that, in turn, is somehow a little &ndash; scrappy?</p>
+<p>I want motion, but also elegance, and at least some interesting engineering. And hey, my whole obsession with making started with microcontrollers, so there has to be some form of programmed goodness in there too. And so, starting off on the general idea of motors, I rabbitholed into the YouTube sub-genre of scratch-built solar and brushless motors, like this one:</p>
+<div class="youtube-container" id='vid--xgDJyCoNh4'>
+  <div class="video-placeholder">
+    <img src='/images/020--xgDJyCoNh4.jpg' alt='Embedded video: Solar Brushless Motor out of Fidget SPINNER' class="video-snapshot-image" />
+    <div class="overlay">
+      <span class="title youtube-placeholder-label">
+        Solar Brushless Motor out of Fidget SPINNER
+      </span>
+      <span class="notice youtube-placeholder-label">
+        Click to activate embedded video. With this you agree to YouTube's <a class="privacy" href="https://policies.google.com/privacy" target="_blank">privacy policy</a>.
+        <a class="info" href="https://github.com/gugray/youtube-privacy-embed" target="blank" title="What is this?">ⓘ</a>
+      </span>
+    </div>
+    <img src="/video-player-button.svg" alt="Play video" class="video-player-button" />
+  </div>  
+</div>
+
+<p>Splendid! This guy has done it, so it&rsquo;s clearly possible: you can make a wheel of magnets spin using the power of an ordinary solar cell. Here&rsquo;s what piques my imagination:</p>
+<ul>
+<li>There are no moving parts with friction! OK, that is obviously not <em>completely</em> true because you need a bearing at the center. But that&rsquo;s the only one, and you can completely avoid electrical contacts.</li>
+<li>Things that have no friction tend to last very long. I like the idea of building somehing that lasts very long.</li>
+<li>This is a machine that showcases its inner workings instead of hiding them. What you see is exactly what it does. This is the mechanical equivalent of freeform circuits. It is a functional sculpture!</li>
+<li>It is mechanically very simple. I am fascinated by the potential of trading mechanical complexity for smart circuitry.</li>
+<li>I can build it from scratch, down to hand-winding the solenoid!</li>
+</ul>
+<p>This is getting warm. But if I&rsquo;m honest, I don&rsquo;t need a microcontroller to make this motor run. A single magnetically activated contact is enough, like the reed relay that is used in the video. If you count that as a second moving part, you can substitute electronics, but it&rsquo;s still a simple analog approach.</p>
+<p>I need a good excuse for a microcontroller.</p>
+<p>Let&rsquo;s make it count the wheel&rsquo;s turns and show it on a display! In fact, let&rsquo;s make it count those turns <em>forever</em>, showing a number that grows day after day and never resets. In fact, let&rsquo;s call this thing the <em>forever engine</em>!</p>
+<p>I&rsquo;m so happy with this concept that I made a quick pencil sketch. I put it as the site&rsquo;s title image, but here it is again:</p>
+<p><img src="/images/sp4ee-concept-sketch.jpg" alt="Sketch of the Solarpunk Forever Engine"></p>
+<ul>
+<li>The output of a small solar cell <em>is</em> limited, so the electronics need to be energy-efficient.</li>
+<li>As luck has it, we have the super-accessible and cheap ATTiny chips that need ridiculously little energy, and even less when they go into sleep mode.</li>
+<li>The display is a bit more tricky, but I can use an old-fashioned monochrome LCD with no backlight. It ought to be large enough so that it&rsquo;s prominent, and if this engine really is to run for decades, I need enough digits.</li>
+<li>I love building with laser-cut wood a lot more than 3D printing. 3D printing is great, but ultimately the result is just a glorified piece of plastic. So laser-cut wood it will be, with mostly exposed brass wires connecting the electric parts.</li>
+<li>There is an element that comes straight from the BEAM cookbook: a large capacitor stores enough energy to power the electronics (though not the motor) for a few hours, so the machine can still be &ldquo;on&rdquo; during cloudy spells, or for a while after dusk.</li>
+</ul>
+<p>There. That&rsquo;s the outline of the Solarpunk Forever Engine. I&rsquo;m as excited as you are to see how the build will go!</p>
+</article>
+
+  <footer>
+    <div>&copy;&nbsp;Gábor L Ugray CC BY-NC-SA &bull; <a href="/publisher">Publisher</a></div>
+  </footer>
+  <script src="/bundle.js?1614373344"></script>
+  <script type="text/javascript">
+    var _paq = window._paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//stats.jealousmarkup.xyz/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '6']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+</body>
+<html>
+

@@ -2,7 +2,6 @@
 <html>
 
 <head>
-	<meta name="generator" content="Hugo 0.78.1" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no">
@@ -11,14 +10,14 @@
   <meta property="og:image" content="https://sp4ee.github.io/images/zen-share.png" />
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary_large_image" />
+    
+  <title>My first ATTiny! And I just bricked it. | Solarpunk Forever Engine</title>
+  <meta property="og:title" content="My first ATTiny! And I just bricked it. | Solarpunk Forever Engine" />
   
-  <title>Solarpunk Forever Engine | A sustainable and symbiotic intelligent machine</title>
-  <meta property="og:title" content="Solarpunk Forever Engine" />
-  
-  <meta name="description" content="Here&#39;s me learning in public by building a tiny solar-powered motor. It spins when the sun shines and keeps counting its turns forever.">
+  <meta name="description" content="Such camera angle, many gradient, so gorgeous.">
   <meta name="keywords" content='' />
-  <meta property="og:description" content="Here&#39;s me learning in public by building a tiny solar-powered motor. It spins when the sun shines and keeps counting its turns forever." />
-  <meta property="og:url" content="https://sp4ee.github.io/" />
+  <meta property="og:description" content="Such camera angle, many gradient, so gorgeous." />
+  <meta property="og:url" content="https://sp4ee.github.io/bricked-attiny" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?1614373344" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?1614373344" />
   <link rel="stylesheet" href="/bundle.css?1614373344" />
@@ -27,28 +26,9 @@
 <body>
 
 
-<article class="main">
-  <h1>Home of the Solarpunk Forever_Engine</h1>
-  <p class="motto">~~~ Just me, building a thing in public ~~~</p>
-  <p><img src="/images/sp4ee-concept-sketch.jpg#narrow" alt="Sketch of the Solarpunk Forever Engine"></p>
-<p>The Solarpunk Forever_Engine (or SP4EE) will be a tiny scratch-built solar engine. It will spin when the sun shines and it will keep count of its turns forever. It&rsquo;s a silly idea with no practical use, which is why I like it. There&rsquo;s more <a href="/about">about the concept here</a>.</p>
-<p>Building SP4EE is my first attempt to <a href="https://www.swyx.io/learn-in-public/">learn in public</a>. I barely know a thing about electronics, microcontrollers or motors. So this will be a lot of fun! Check back to see what I&rsquo;m currently failing at. Or sign up for the newsletter and get the updates right in your Inbox.</p>
-
-
-<div class="newsletter-signup">
-  <div class="placeholder">
-    <b>Sign me up for the newsletter</b><br/>
-    With this you accept Substack's <a class="newsletter-signup-link" href="https://substack.com/privacy" target="_blank">Privacy Policy</a>.
-  </div>
-</div>
-
-
-
-
-  
-  
-  <section class="list-full">
-  <h2><a href="https://sp4ee.github.io/build-log/bricked-attiny/">My first ATTiny! And I just bricked it.</a></h2>
+<article class="main single">
+  <nav class="above-title"><a href="https://sp4ee.github.io/">Solarpunk Forever Engine</a> »</nav>
+  <h1>My first ATTiny! And I just bricked it.</h1>
   <p class="pagemeta">October 28, 2020</p>
   <p>After I got the <a href="/build-log/working-brushless-motor-prototype/">brushless motor prototype</a> working I needed a short break from 3D stuff like laser-cutting and gluing and winding coils, so I chose to give the ATTiny microcontroller a spin. Here it is sitting on its &ldquo;Hello, world!&rdquo; breadboard, accompanied by its big brother, the Arduino Nano that is used as an ad-hoc programmer.</p>
 <p><img src="/images/040-attiny-breadboard.jpg#narrow" alt="ATTiny45 and Arduino Nano"></p>
@@ -140,81 +120,6 @@
 </ul>
 <p>This latter part is what got me. I successfully reduced my first ATTiny45&rsquo;s clock speed to 128 kHz, and could never upload another program again. I was apparently <a href="https://forum.arduino.cc/index.php?topic=182138.0">not the first one to run into this</a>. It is probably possible to reset this chip physically, but the number of hours I would need to get there is way more than what the chip is worth. So now I have this sad guy lying around &ndash; a <a href="https://en.wikipedia.org/wiki/Point-to-point_construction#%22Dead_bug%22_construction">dead bug</a>, for all intents and purposes.</p>
 <p><img src="/images/040-attiny-bricked.jpg#narrow" alt="Sad bricked ATTiny45"></p>
-</section>
-
-  
-  
-  
-  <section class="list-short">
-  <h2><a href="https://sp4ee.github.io/build-log/working-brushless-motor-prototype/">Got a working motor! (But not solar.)</a></h2>
-  <p class="pagemeta">October 24, 2020</p>
-  <p>I got to build a prototype motor! And it works.</p>
-<p>There are so many open questions about the motor. How many magnets should the wheel have? Should it be an odd or an even number? What type of wire is best for the coil, and how many turns? I decided to first replicate something very close to the video I included in the previous post. That uses a reed relay, which is the simplest way to achieve motor control with zero electronics. Can I get a running motor from a battery? Will it run from a solar cell?</p>
-<p>If you&rsquo;re only interested in seeing the working proof-of-concept, here it is. For the part that really matters, read on ;-)</p>
-<div class="youtube-container" id='vid-Msv9fFuiVH4'>
-  <div class="video-placeholder">
-    <img src='/images/030-Msv9fFuiVH4.jpg' alt='Embedded video: Brushless motor with reed relay: test from battery' class="video-snapshot-image" />
-    <div class="overlay">
-      <span class="title youtube-placeholder-label">
-        Brushless motor with reed relay: test from battery
-      </span>
-      <span class="notice youtube-placeholder-label">
-        Click to activate embedded video. With this you agree to YouTube's <a class="privacy" href="https://policies.google.com/privacy" target="_blank">privacy policy</a>.
-        <a class="info" href="https://github.com/gugray/youtube-privacy-embed" target="blank" title="What is this?">ⓘ</a>
-      </span>
-    </div>
-    <img src="/video-player-button.svg" alt="Play video" class="video-player-button" />
-  </div>  
-</div>
-  <nav class="full-entry-link">
-    » <a href="https://sp4ee.github.io/build-log/working-brushless-motor-prototype/">Read full entry</a>
-  </nav>
-</section>
-
-  
-  
-  
-  <section class="list-short">
-  <h2><a href="https://sp4ee.github.io/build-log/motion-smarts-solar-engine/">Motion and smarts</a></h2>
-  <p class="pagemeta">October 17, 2020</p>
-  <p>Learning about pummers awakened my building instinct, but it turns out the desire goes a bit deeper this time. A blinking light is, well, a blinking light, but it&rsquo;s somehow very &ndash; abstract? immaterial? The non-sitters in the BEAM menagerie get their twitchy motion from tiny motors soldered in weird ways, and that, in turn, is somehow a little &ndash; scrappy?</p>
-<p>I want motion, but also elegance, and at least some interesting engineering. And hey, my whole obsession with making started with microcontrollers, so there has to be some form of programmed goodness in there too. And so, starting off on the general idea of motors, I rabbitholed into the YouTube sub-genre of scratch-built solar and brushless motors, like this one:</p>
-<div class="youtube-container" id='vid--xgDJyCoNh4'>
-  <div class="video-placeholder">
-    <img src='/images/020--xgDJyCoNh4.jpg' alt='Embedded video: Solar Brushless Motor out of Fidget SPINNER' class="video-snapshot-image" />
-    <div class="overlay">
-      <span class="title youtube-placeholder-label">
-        Solar Brushless Motor out of Fidget SPINNER
-      </span>
-      <span class="notice youtube-placeholder-label">
-        Click to activate embedded video. With this you agree to YouTube's <a class="privacy" href="https://policies.google.com/privacy" target="_blank">privacy policy</a>.
-        <a class="info" href="https://github.com/gugray/youtube-privacy-embed" target="blank" title="What is this?">ⓘ</a>
-      </span>
-    </div>
-    <img src="/video-player-button.svg" alt="Play video" class="video-player-button" />
-  </div>  
-</div>
-  <nav class="full-entry-link">
-    » <a href="https://sp4ee.github.io/build-log/motion-smarts-solar-engine/">Read full entry</a>
-  </nav>
-</section>
-
-  
-  
-  
-  <section class="list-short">
-  <h2><a href="https://sp4ee.github.io/build-log/fell-in-love-with-pummers/">Wait, what... A pummer?</a></h2>
-  <p class="pagemeta">October 10, 2020</p>
-  <p>May Kevin Lynagh be damned! I have just found me an entire new herd of yak to shave, and <a href="https://kevinlynagh.com/newsletter/">his newsletter</a> is largely to blame. If he hadn&rsquo;t included that link to Mohit Bhoite&rsquo;s <a href="https://www.bhoite.com/sculptures/">freeform circuit sculptures</a> at the bottom in the October 4 issue, I would still be blissfully ignorant of pummers and BEAM circuits. I would not have ordered yet another small bag of parts, and I would definitely not have found myself tweeting out this image on a Friday evening:</p>
-<p><img src="/images/010-pummer-parts.jpg#narrow" alt="Pummer schematic and parts"></p>
-  <nav class="full-entry-link">
-    » <a href="https://sp4ee.github.io/build-log/fell-in-love-with-pummers/">Read full entry</a>
-  </nav>
-</section>
-
-  
-  
-
 </article>
 
   <footer>

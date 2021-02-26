@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  
+  <meta property="og:image" content="https://sp4ee.github.io/images/zen-share.png" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+    
+  <title>Wait, what... A pummer? | Solarpunk Forever Engine</title>
+  <meta property="og:title" content="Wait, what... A pummer? | Solarpunk Forever Engine" />
+  
+  <meta name="description" content="Reviving the lost art of BEAM engines and pummers with a solar cell and a 74HC14 IC.">
+  <meta name="keywords" content='' />
+  <meta property="og:description" content="Reviving the lost art of BEAM engines and pummers with a solar cell and a 74HC14 IC." />
+  <meta property="og:url" content="https://sp4ee.github.io/fell-in-love-with-pummers" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?1614373344" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?1614373344" />
+  <link rel="stylesheet" href="/bundle.css?1614373344" />
+</head>
+
+<body>
+
+
+<article class="main single">
+  <nav class="above-title"><a href="https://sp4ee.github.io/">Solarpunk Forever Engine</a> »</nav>
+  <h1>Wait, what... A pummer?</h1>
+  <p class="pagemeta">October 10, 2020</p>
+  <p>May Kevin Lynagh be damned! I have just found me an entire new herd of yak to shave, and <a href="https://kevinlynagh.com/newsletter/">his newsletter</a> is largely to blame. If he hadn&rsquo;t included that link to Mohit Bhoite&rsquo;s <a href="https://www.bhoite.com/sculptures/">freeform circuit sculptures</a> at the bottom in the October 4 issue, I would still be blissfully ignorant of pummers and BEAM circuits. I would not have ordered yet another small bag of parts, and I would definitely not have found myself tweeting out this image on a Friday evening:</p>
+<p><img src="/images/010-pummer-parts.jpg#narrow" alt="Pummer schematic and parts"></p>
+<!-- raw HTML omitted -->
+<p>But he did, and here we are. I&rsquo;ve discovered a delightful little subculture that dates back to the 1990s, when you could first scavenge tiny motors and solar panels from defunct mass-produced consumer goods. And scavenge they did, these folks! This dude Mark Tilden came up with the whole <a href="https://en.wikipedia.org/wiki/BEAM_robotics">BEAM</a> idea, the name being short for <em>Biology, Electronics, Aesthetics and Mechanics</em>. This is the kind of thing you should think of (photo from <a href="http://www.smfr.org/robots/fled_popper.html">smfr.org</a>):</p>
+<p><img src="/images/010-fled_popper_small.jpg" alt="FLED Photopopper"></p>
+<p>They charge a capacitor from the solar cell, and periodically discharge the accumulated energy to drive a  tiny motor and give the beast a little nudge. There&rsquo;s a whole taxonomy of these creatures. One group is called <em>sitters</em>, and a subgroup of these immobile robots are the <em>pummers</em>, whose defining feature is that they blink while staying put.</p>
+<p>After seeing Mohit Bhoite&rsquo;s work, in particular the &ldquo;satellites&rdquo; like SATtiny or the Cube Sat, I knew what I had to build was a pummer.</p>
+<p>It seems Mohit has rediscovered an entire lost art. The Internet has some isolated traces, but it all feels like rescuing the last few books from a burning library. Whole websites have disappeared (and sadly, without a trace in the <a href="https://archive.org/web/">Wayback Machine</a> too), and the few places that are still hanging in there suffer from pervasive link rot and missing pages. There was also once a Yahoo! mailing list. Its archive was <a href="https://www.theverge.com/2019/10/16/20917710/yahoo-groups-deleting-all-content-upload-message-boards-email-communities">deleted by Yahoo</a> in December 2019, along with all the other groups.</p>
+<p>For my own pummer I went with what I could find on the charmingly quaint Solarbotics website, in particular on the page about the <a href="http://solarbotics.net/library/circuits/se_noct_SIMD1SR.html">SIMD1 nocturnal solar engine</a> and the <a href="http://solarbotics.net/library/circuits/bot_pummer.html">efficient pummer circuit</a>. Here&rsquo;s my recreation of the schematic in KiCad, but by all means go and look at the original pages, they are immense fun to read! Also, they will explain how the circuits actually work, which is something I cannot do.</p>
+<p><img src="/images/010-simd1-pummer-schematic.png" alt="Schematic of SIMD1 nocturnal engine and dual-LED pummer with 74HC14"></p>
+<p>For now, my own pummer lives on a breadboard and looks like this. The little lights are delighting to look at in the dark, but I haven&rsquo;t figured out what their final sculpture-form will be like. Most likely it will have some laser-cut plywood parts and lots of soldered brass wires.</p>
+<p><img src="/images/010-pummer-breadboard.jpg#narrow" alt="Pummer on a breadboard"></p>
+<p><em>For more stuff about Mohit&rsquo;s sculptures and how he makes them, check out Kane Hsieh&rsquo;s <a href="https://www.machinepix.com/p/machinepix-weekly-7">MachinePix interview</a> with him, and watch his <a href="https://www.youtube.com/watch?v=LqVFxNFGNbc">25-minute talk</a> with all the juicy details of the technique.</em></p>
+</article>
+
+  <footer>
+    <div>&copy;&nbsp;Gábor L Ugray CC BY-NC-SA &bull; <a href="/publisher">Publisher</a></div>
+  </footer>
+  <script src="/bundle.js?1614373344"></script>
+  <script type="text/javascript">
+    var _paq = window._paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//stats.jealousmarkup.xyz/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '6']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+</body>
+<html>
+

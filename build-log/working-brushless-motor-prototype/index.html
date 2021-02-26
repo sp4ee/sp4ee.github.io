@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  
+  <meta property="og:image" content="https://sp4ee.github.io/images/zen-share.png" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+    
+  <title>Got a working motor! (But not solar.) | Solarpunk Forever Engine</title>
+  <meta property="og:title" content="Got a working motor! (But not solar.) | Solarpunk Forever Engine" />
+  
+  <meta name="description" content="Such camera angle, many gradient, so gorgeous.">
+  <meta name="keywords" content='' />
+  <meta property="og:description" content="Such camera angle, many gradient, so gorgeous." />
+  <meta property="og:url" content="https://sp4ee.github.io/working-brushless-motor-prototype" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?1614373344" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?1614373344" />
+  <link rel="stylesheet" href="/bundle.css?1614373344" />
+</head>
+
+<body>
+
+
+<article class="main single">
+  <nav class="above-title"><a href="https://sp4ee.github.io/">Solarpunk Forever Engine</a> »</nav>
+  <h1>Got a working motor! (But not solar.)</h1>
+  <p class="pagemeta">October 24, 2020</p>
+  <p>I got to build a prototype motor! And it works.</p>
+<p>There are so many open questions about the motor. How many magnets should the wheel have? Should it be an odd or an even number? What type of wire is best for the coil, and how many turns? I decided to first replicate something very close to the video I included in the previous post. That uses a reed relay, which is the simplest way to achieve motor control with zero electronics. Can I get a running motor from a battery? Will it run from a solar cell?</p>
+<p>If you&rsquo;re only interested in seeing the working proof-of-concept, here it is. For the part that really matters, read on ;-)</p>
+<div class="youtube-container" id='vid-Msv9fFuiVH4'>
+  <div class="video-placeholder">
+    <img src='/images/030-Msv9fFuiVH4.jpg' alt='Embedded video: Brushless motor with reed relay: test from battery' class="video-snapshot-image" />
+    <div class="overlay">
+      <span class="title youtube-placeholder-label">
+        Brushless motor with reed relay: test from battery
+      </span>
+      <span class="notice youtube-placeholder-label">
+        Click to activate embedded video. With this you agree to YouTube's <a class="privacy" href="https://policies.google.com/privacy" target="_blank">privacy policy</a>.
+        <a class="info" href="https://github.com/gugray/youtube-privacy-embed" target="blank" title="What is this?">ⓘ</a>
+      </span>
+    </div>
+    <img src="/video-player-button.svg" alt="Play video" class="video-player-button" />
+  </div>  
+</div>
+
+<h3 id="the-frame">The frame</h3>
+<p>As a first step I need a test bed that lets me experiment and iterate on the unknown parameters. The point is to get it done fast, not to make it nice. Once I know what works and what the ideal position of each part is, I can go on and design something more fancy. I drew the SVG outlines, laser-cut the parts and the wheel, and glued things together. The images below should be give you an adequate idea of this straightforward structure. Key specs:</p>
+<ul>
+<li>Bottom plate is 3 mm MDF (fiber board). All other parts are 2 mm beech plywood.</li>
+<li>Magnets are 10×5 mm neodymium 1.33-1.37 T</li>
+<li>Ball bearing is 3×8×4 mm</li>
+</ul>
+<p><figure class="left">
+    <img src="/images/030-parts-outline.png"
+         alt="Outlines of parts"/> <figcaption>
+            <p>Outlines of parts</p>
+        </figcaption>
+</figure>
+
+<figure class="right">
+    <img src="/images/030-parts-laser-cut.jpg"
+         alt="The parts, laser-cut"/> <figcaption>
+            <p>The parts, laser-cut</p>
+        </figcaption>
+</figure>
+
+<div class="clear"></div>
+
+<figure class="left">
+    <img src="/images/030-building-up.jpg"
+         alt="Building it all up"/> <figcaption>
+            <p>Building it all up</p>
+        </figcaption>
+</figure>
+
+<figure class="right">
+    <img src="/images/030-motor-built-up.jpg"
+         alt="The built-up frame with wheel"/> <figcaption>
+            <p>The built-up frame with wheel</p>
+        </figcaption>
+</figure>
+
+<div class="clear"></div>
+</p>
+<h3 id="the-coil">The coil</h3>
+<p>I was, frankly, rather clueless about this part. The two key questions are: how thin should the wire be, and how many turns should the coil have? The fidget spinner motor from the last post&rsquo;s video uses an 80-turn coil with Ø0.4 mm wire, but a different motor from the same guy uses a coil with 800 turns of Ø0.31 mm wire. There&rsquo;s an entire literature about this, but I didn&rsquo;t want to spend hours on this one detail. My search came up with this <a href="https://electronics.stackexchange.com/a/94591">StackExchange answer</a>, pointing to this <a href="https://daycounter.com/Calculators/Magnets/Solenoid-Force-Calculator.phtml">online calculator</a>. There&rsquo;s a different good <a href="https://education.jlab.org/qa/electromagnet_02.html">breakdown here</a>. Also, Josh, the <a href="https://wp.josh.com/2018/05/07/deconstructing-kitty/">Deconstructing Kitty</a> guy who hacked a Maneki-neko with an Arduino, has a convincing-sounding theory about the key tradeoff:</p>
+<blockquote>
+<p>So it seams that (ideally) every time we double the number of turns, we use 1/2 as much power to get the same field at the same voltage. Make sense?</p>
+<p>Of course double the turns also makes the coil bigger, and the bigger the coil the farther away geometrically the average wire will be from the center. This is why you also want very thin wire – especially since the increased resistance of the thin wire is less important as the current goes down.</p>
+</blockquote>
+<p>Eventually I said heck, you gotta make <em>something</em>, so I ordered a 110 m roll of Ø0.2 mm wire, started winding and waited to see how it goes. I improvised a bobbin using thick (200 g) paper and used a 3 mm thick nail to help me hold it while winding. I felt there were enough turns at 500, so that&rsquo;s what my solenoid ended up having. At least I think it&rsquo;s 500 turns: it&rsquo;s really hard to keep track! I even had to take my loudly ticking clock out of the room because it messed up my counting.</p>
+<p><figure class="left">
+    <img src="/images/030-bobbin-parts.jpg"
+         alt="Parts of the bobbin"/> <figcaption>
+            <p>Parts of the bobbin</p>
+        </figcaption>
+</figure>
+
+<figure class="right">
+    <img src="/images/030-bobbin-on-nail.jpg"
+         alt="Ready for winding"/> <figcaption>
+            <p>Ready for winding</p>
+        </figcaption>
+</figure>
+
+<div class="clear"></div>
+
+<figure class="left">
+    <img src="/images/030-wire.jpg"
+         alt="Wire"/> <figcaption>
+            <p>Wire</p>
+        </figcaption>
+</figure>
+
+<figure class="right">
+    <img src="/images/030-coil-in-place.jpg"
+         alt="Finished coil in place"/> <figcaption>
+            <p>Finished coil in place</p>
+        </figcaption>
+</figure>
+
+<div class="clear"></div>
+</p>
+<h3 id="reed-relay-control">Reed relay control</h3>
+<p>What makes the wheel turn is that the coil is repeatedly activated for a short time at just the right moment, propelling the nearest magnet away from itself. This must happen right after the current magnet has passed in front of the coil, and it must not last too long, otherwise the coil will start repelling the approaching next magnet, slowing down the wheel instead of accelerating it.</p>
+<p>The easiest way to achieve this is with a reed relay, which is simply two steel pieces (like two reeds) next to each other. The metallic reeds are apart when resting but close the contact when in a magnetic field. In other words, when a magnet is nearby, the reed relay closes the circuit and activates the coil. When the magnet is away, the circuit breaks and the coil is turned off. If you put the relay at the right spot near the wheel, it will keep activating the coil at the right moment and your brushless motor will run.</p>
+<p>The video below shows the first half of this setup. The reed relay is the black part mounted on the frame (unfortunately hard to see clearly because it&rsquo;s against a backdrop of black adhesive tape). For now, instead of the coil it is connected to an LED with a current limiting resistor. The blinking LED shows when the nearby magnet closes the relay.</p>
+<p>The power comes from two NiMH AAA rechargeable batteries (2.4 V).</p>
+<div class="youtube-container" id='vid-Vr2icmnC_wE'>
+  <div class="video-placeholder">
+    <img src='/images/030-Vr2icmnC_wE.jpg' alt='Embedded video: Wheel of magnets and reed relay' class="video-snapshot-image" />
+    <div class="overlay">
+      <span class="title youtube-placeholder-label">
+        Wheel of magnets and reed relay
+      </span>
+      <span class="notice youtube-placeholder-label">
+        Click to activate embedded video. With this you agree to YouTube's <a class="privacy" href="https://policies.google.com/privacy" target="_blank">privacy policy</a>.
+        <a class="info" href="https://github.com/gugray/youtube-privacy-embed" target="blank" title="What is this?">ⓘ</a>
+      </span>
+    </div>
+    <img src="/video-player-button.svg" alt="Play video" class="video-player-button" />
+  </div>  
+</div>
+
+<p>To be honest, I&rsquo;m not even sure I want to use a reed relay in the actual forever engine. For one, I still consider it as a moving part, sort of. More importantly, to allow the microcontroller to count the wheel&rsquo;s turns, I&rsquo;ll need a different sensing mechanism anyway, which would add redundancy without any aesthetic purpose. So why did I use a reed relay now?</p>
+<p>The reason is, this was the fastest way to get to a functioning initial proof-of-concept demonstrating that yes, I can build a working solar-powered motor. Which then takes me to the next point&hellip;</p>
+<h3 id="but-it-doesnt-work-from-a-solar-cell">But it doesn&rsquo;t work from a solar cell</h3>
+<p>After the initial joy at seeing the motor run from a 2.4 V battery I hooked it up to the intended solar cell, a 57×65 mm 5 V module rated at 81 mA.</p>
+<p><figure class="left">
+    <img src="/images/030-solar-cell-front.jpg"
+         alt="Solar cell (front)"/> <figcaption>
+            <p>Solar cell (front)</p>
+        </figcaption>
+</figure>
+
+<figure class="right">
+    <img src="/images/030-solar-cell-back.jpg"
+         alt="Solar cell (back)"/> <figcaption>
+            <p>Solar cell (back)</p>
+        </figcaption>
+</figure>
+
+<div class="clear"></div>
+</p>
+<p>At this point my initial luck ran out. This solar cell was insufficient to get the motor running, at least when illuminated from a bright desktop lamp placed immediately against the panel. Getting to the bottom of this, however, will be the goal of another iteration.</p>
+<h3 id="takeaways">Takeaways</h3>
+<ul>
+<li>
+<p>These 10×5 mm neodymium magnets are really strong. Already when gluing them into the wheel, with the same pole facing inwards, you could feel how the last two or three were willing to either flip or get away outwards. And even the tiny amount of metal in the reed relay makes the wheel turn so the nearest magnet aligns with the relay.</p>
+</li>
+<li>
+<p>Seeing how these magnets behave I also immediately got why the solenoid has no iron core. Just the presence of that core would attract the nearest magnet with overwhelming force.</p>
+</li>
+<li>
+<p>With six such magnets placed in a Ø8 cm circle, the wheel&rsquo;s angular momentum might be the main reason why the solar cell cannot supply enough power to move it. In other words, the things are just too heavy. Conclusion: I&rsquo;ll be rebuilding the wheel with smaller, 5×2 mm magnets.</p>
+</li>
+<li>
+<p>While I&rsquo;m at it, I&rsquo;ll also reduce the wheel&rsquo;s diameter by maybe 2 cm. If you take a good look at the video you&rsquo;ll see that the wheel needs a nudge to start: the nearest magnet is normally too far from the coil. Alternatively, maybe the engine will need a second coil at a 30° offset. What I&rsquo;m not really eager to do is increase the number of magnets&hellip; 6 are already enough hassle to build up.</p>
+</li>
+<li>
+<p>This is not very visible in either video, but the cheapo, no-name ball bearing I naïvely ordered from Amazon has a ridiculously large play. When the motor&rsquo;s running it looks like a very beaten toy car&rsquo;s wheel that&rsquo;s just about to fall off. Here&rsquo;s another brilliant yak shave: exploring the market of professional miniature ball bearings!</p>
+</li>
+<li>
+<p>Finally, a fun fact about American engineering exceptionalism. Forget about Imperial units. For wires there&rsquo;s an entirely separate system called AWG, short for <a href="https://en.wikipedia.org/wiki/American_wire_gauge">American wire gauge</a>, passed down to contemporary engineers straight from 1857! The larger the number, the thinner the wire. My 0.2 mm wire is apparently AWG 32.</p>
+</li>
+</ul>
+</article>
+
+  <footer>
+    <div>&copy;&nbsp;Gábor L Ugray CC BY-NC-SA &bull; <a href="/publisher">Publisher</a></div>
+  </footer>
+  <script src="/bundle.js?1614373344"></script>
+  <script type="text/javascript">
+    var _paq = window._paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//stats.jealousmarkup.xyz/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '6']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+</body>
+<html>
+
